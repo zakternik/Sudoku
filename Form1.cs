@@ -144,20 +144,18 @@ namespace Sudoku
 
         private void removeCells(int numberOfCells)
         {
-            fillCells();
-
             int removedNumbersCount = 0;
             int valueOfSelectedCell;
 
             // Create list of all cells
             var allCells = new List<int>();
-            for(int i = 0; i < 81; i++)
+            for (int i = 0; i < 81; i++)
                 allCells.Add(i);
 
             // Loop until all cells have been checked or enough cells have been removed
             while (allCells.Count != 0)
             {
-                if (!(numberOfCells == removedNumbersCount))
+                if (numberOfCells != removedNumbersCount)
                 {
                     // Select random cell and get X and Y values of that cell than remove cell from list
                     int randomCell = allCells[rnd.Next(0, allCells.Count)];
@@ -184,13 +182,24 @@ namespace Sudoku
                         removedNumbersCount--;
                     }
                 }
-                else 
+                else if (numberOfCells - removedNumbersCount > allCells.Count)
+                    break;
+                else
                     break;
             }
 
             // If we cant remove enough cells for selected difficulty, we generate new sudoku
             if (removedNumbersCount < numberOfCells)
+            {
+                int counter1 = 0;
+                foreach (var cell in cells)
+                {
+                    cell.Value = arrayOfCells[counter1];
+                    cell.Text = arrayOfCells[counter1].ToString();
+                    counter1++;
+                }
                 removeCells(numberOfCells);
+            }
             else
             {
                 foreach (var cell in cells)
@@ -297,6 +306,19 @@ namespace Sudoku
             return false;
         }
 
+
+        int[] arrayOfCells = new int[81];
+        private void saveCellsInArray()
+        {
+            int counter = 0;
+            fillCells();
+            foreach (var cell in cells)
+            {
+                arrayOfCells[counter] = cell.Value;
+                counter++;
+            }
+        }
+
         Stopwatch stopWatch = new Stopwatch();
         bool isGameRunning = false;
         private void btnGenerateSudoku_Click(object sender, EventArgs e)
@@ -305,6 +327,7 @@ namespace Sudoku
             {
                 if (!isGameRunning)
                 {
+                    saveCellsInArray();
                     isGameRunning = true;
                     lblTimeElapsed.Text = "0";
                     hintCounter = 0;
@@ -324,6 +347,7 @@ namespace Sudoku
                                 , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dresult == DialogResult.OK)
                     {
+                        saveCellsInArray();
                         lblTimeElapsed.Text = "0";
                         hintCounter = 0;
                         int numberOfCells;

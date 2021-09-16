@@ -182,7 +182,7 @@
             // 
             this.lblTimeElapsed.AutoSize = true;
             this.lblTimeElapsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTimeElapsed.Location = new System.Drawing.Point(411, 12);
+            this.lblTimeElapsed.Location = new System.Drawing.Point(211, 8);
             this.lblTimeElapsed.Name = "lblTimeElapsed";
             this.lblTimeElapsed.Size = new System.Drawing.Size(54, 20);
             this.lblTimeElapsed.TabIndex = 11;
