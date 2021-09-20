@@ -17,3 +17,12 @@ F:\C#\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.cache
 F:\C#\Sudoku\obj\Debug\Sudoku.csproj.CoreCompileInputs.cache
 F:\C#\Sudoku\obj\Debug\Sudoku.exe
 F:\C#\Sudoku\obj\Debug\Sudoku.pdb
+E:\C#\Sudoku1\bin\Debug\Sudoku.exe.config
+E:\C#\Sudoku1\bin\Debug\Sudoku.exe
+E:\C#\Sudoku1\bin\Debug\Sudoku.pdb
+E:\C#\Sudoku1\obj\Debug\Sudoku.csprojAssemblyReference.cache
+E:\C#\Sudoku1\obj\Debug\Sudoku.Form1.resources
+E:\C#\Sudoku1\obj\Debug\Sudoku.Properties.Resources.resources
+E:\C#\Sudoku1\obj\Debug\Sudoku.csproj.GenerateResource.cache
+E:\C#\Sudoku1\obj\Debug\Sudoku.exe
+E:\C#\Sudoku1\obj\Debug\Sudoku.pdb

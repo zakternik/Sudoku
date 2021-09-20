@@ -290,7 +290,7 @@ namespace Sudoku
                     timer1.Enabled = false;
                     stopWatch.Stop();
                     isGameRunning = false;
-                    MessageBox.Show("Congratulations, you solved Sudoku in " + stopWatch.Elapsed.Seconds + " seconds!");
+                    MessageBox.Show("Congratulations, you solved Sudoku in " + stopWatch.Elapsed.Minutes + ":" + stopWatch.Elapsed.Seconds + " minutes!");
                     return true;
                 }
                 else
